@@ -1,6 +1,6 @@
 lazyLoader object
 =============
-Very simple javscript  lazy loader class, you can add into your project, and load huge script file after page load
+Very simple javscript  lazy loader object, you can add into your project, and load huge script file after page load
 
 
 
@@ -31,24 +31,21 @@ Javascript :
     	<script type="text/javascript">
 
         	window.onload = function() {
-        		
-        		{% if IS_DEBUG == False %} 
-        			lazyLoader.addRequest('/static/release/galio-{{ VERSION }}/dojo/dojo.js', 115);
-        			lazyLoader.addRequest('/static/release/galio-{{ VERSION }}/galio/main.js.uncompressed.js', 1390)
-        		{% else %}
-        			lazyLoader.addRequest('/static/dojo/dojo.js', 115);
-        		{% endif %}
-				lazyLoader.addRequest('/static/libs/map/openlayers/OpenLayers_c.js', 920);
-			    lazyLoader.addRequest('/static/libs/map/OpenStreetMap.js', 4);
-			    lazyLoader.addRequest('/static/libs/map/OL_Yandex.js', 15);
-			    lazyLoader.addRequest("/static/libs/map/osm_proxy.js", 2);
-			    lazyLoader.addRequest("/static/css/layer_style.js", 4);
-			    
-			    lazyLoader.startLoad(init);
-        		
-			   
-			}
+     
+			lazyLoader.addRequest('/static/libs/map/openlayers/OpenLayers_c.js', 920);
+			lazyLoader.addRequest('/static/libs/map/OpenStreetMap.js', 4);
+			lazyLoader.addRequest('/static/libs/map/OL_Yandex.js', 15);
+			lazyLoader.addRequest("/static/libs/map/osm_proxy.js", 2);
+			lazyLoader.addRequest("/static/css/layer_style.js", 4);
 
+			lazyLoader.startLoad(init);
+
+			   
+		}
+		
+		function init() {
+			console.log("page was load");		
+		}
     	</script>
 
 Html :

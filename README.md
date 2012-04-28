@@ -31,8 +31,8 @@ Javascript :
     	<script type="text/javascript">
 
         	window.onload = function() {
-     
-			lazyLoader.addRequest('/static/libs/map/openlayers/OpenLayers_c.js', 920);
+
+			lazyLoader.addRequest('/static/libs/map/openlayers/OpenLayers_c.js', 920); // second parametr use when object said progress precent
 			lazyLoader.addRequest('/static/libs/map/OpenStreetMap.js', 4);
 			lazyLoader.addRequest('/static/libs/map/OL_Yandex.js', 15);
 			lazyLoader.addRequest("/static/libs/map/osm_proxy.js", 2);
